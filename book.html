@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../images/logo-thumb.svg" alt="logo" class="logo">
+        <div class="Button">
+            <a href="book.html">
+                BOOK NOW
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="book_title">
+            <div class="book_text">
+                <h2>Select a ticket type</h2>
+            </div>
+        </div>
+        <div class="buttons" align="center">
+            <button class="book_button">Promotion</button>
+            <button class="book_button">Ala Carte</button>
+            <button class="book_button">Special Experience</button>
+        </div>
+
+        <div class="offer-cards">
+            {% for offer in offers %}
+            <div class="offer-card">
+                <div class="offer-card__image">
+                    <img class="offer-card__image" src="{{ offer.image_url }}" alt="{{ offer.title }}">
+                </div>
+                <div class="offer-card__type">
+                    <div>
+                        <h4>{{ offer.title }}</h4>
+                        <div class="offer-card_desc">
+                            <p>Includes: </p>
+                            <ul>
+                                {% for item in offer.includes %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p>Visit Period: {{ offer.visit_period }}</p>
+                            <p>*Redeemable at selected restaurants.</p>
+                            <p><sup>#</sup>No minimum spend. Stackable up to 4 vouchers per transaction.</p>
+                        </div>
+                        <a class="view_det">View details</a>
+                    </div>
+                    <div class="book_end">
+                        <div class="book_end_text">
+                            <span>From</span>
+                            <span><b>{{ offer.price }}</b></span>
+                        </div>
+                        <div>
+                            <button id="myBtn" class="Button">Select</button>
+                        </div>
+                    </div>
+
+                    <!-- Всплывающее окно -->
+                    <div id="myModal" class="modal">
+
+                      <!-- Контент всплывающего окна -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="package-container">
+                            <img class="end-card-img" src="../images/seaa-main-masthead-1440x760.avif" alt="S.E.A Aquarium" width="1080" height="625">
+                            <h2>value of</h2>
+                            <div class="dropdown">
+                                <button onclick="myFunction('myDropdown1')" class="dd-btn">Details <img src="../images/chevron-down (1).svg" class="img-right"></button>
+                                <div id="myDropdown1" class="dropdown-content">
+                                    <ul>
+                                  <li>1 x S.E.A. Aquarium Adult One-Day Ticket (ages 13 and above)¹</li>
+                                  <li>1 x Mastercard Exclusive Gift²</li>
+                                  </ul>
+                                  <p>¹ Ticket valid for 7 days from selected date</p>
+                                  <p>² Redeemable at SEAA Treasure Retail Store</p>
+
+                                </div>
+                              </div>
+                              <div class="dropdown">
+                                <button onclick="myFunction('myDropdown2')" class="dd-btn">Terms and Conditions <img src="../images/chevron-down (1).svg" class="img-right"></button>
+                                <div id="myDropdown2" class="dropdown-content">
+                                    <ul>
+                                        <li>Promotion is valid for purchases made between now to 31 March 2024 (both days inclusive) and visits from now to 6 April 2024 during the respective park's operating days. Extension of validity if not permitted.</li>
+<li>Payment must be made by Mastercard.</li>
+<li>Promotion is valid for purchase of dated Open-dated 7 Days Tickets only, subject to availability, at www.rwsentosa.com</li>
+<li>Promotion is not valid with other discounts and promotions.</li>
+<li>Admission ticket is non-transferable, not for resale or exchange, void if altered.</li>
+<li>Admission ticket is non-refundable, even in cases of inclement weather.</li>
+<li>Admission ticket is not to be used for promotional purposes unless approved in writing by Resorts World Sentosa.</li>
+<li>Any resale of tickets/vouchers is strictly prohibited unless authorized in writing by RWS. RWS reserves the right to invalidate tickets/vouchers in connection with any fraudulent /unauthorized resale transaction, without refund or other compensation.</li>
+<li>Resorts World Sentosa reserves the right to amend or add to the Terms & Conditions at any time without prior notice. Others general Terms & Conditions apply, including the RWS Attraction Pass Terms and Conditions.</li>
+<li>Mastercard Exclusive Gift</li>
+<li>Valid for 1(ONE) redemption per valid voucher as per above date.</li>
+<li>Voucher is only redeemable during regular S.E.A. Aquarium operating hours up to 30 minutes prior to posted closing time; not valid during separately ticketed events.</li>
+<li>Non-transferable, not for sale or exchange, non-refundable, void if altered.</li>
+<li>Not to be used for promotional purposes unless approved in writing by Resorts World Sentosa.</li>
+<li>Vouchers shall not be used in conjunction with any other promotional offers, discounts & other vouchers.</;>
+<li>Resorts World Sentosa reserves the right to amend or vary any Terms & Conditions at any time without prior notice.</li>
+
+                                    </ul>
+                                  </div>
+
+                                  <div class="quantity-selector">
+                                    <label for="quantity">Select Quantity:</label>
+                                    <div class="dec">—</div>
+                                    <div id="quantity">1</div>
+                                    <div class="inc">+</div>
+                                  </div>
+
+                                  <div class="sub">
+                                    <a href="/submit?sdg=your-sdg-value">{{sdg}}</a>
+                                    <a href="" id="add-to-cart-link">Add To Cart</a>
+                                  </div>
+
+                                  <script>
+                                  var quantity = document.getElementById('quantity');
+                                  var inc = document.querySelector('.inc');
+                                  var dec = document.querySelector('.dec');
+                                  var addToCartLink = document.getElementById('add-to-cart-link');
+
+                                  inc.addEventListener('click', function() { 
+                                    quantity.textContent = parseInt(quantity.textContent) + 1;
+                                    updateAddToCartLink();
+                                  });
+
+                                  dec.addEventListener('click', function() {
+                                    if (parseInt(quantity.textContent) > 1) {
+                                      quantity.textContent = parseInt(quantity.textContent) - 1;
+                                    }
+                                    updateAddToCartLink();
+                                  });
+
+                                  function updateAddToCartLink() {
+                                    addToCartLink.href = "/save?quantity=" + quantity.textContent;
+                                  }
+
+                                  // Обновляем ссылку сразу при загрузке страницы
+                                  updateAddToCartLink();
+
+
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+                    </div>
+
+                    <script>
+
+                    var modal = document.getElementById("myModal");
+
+
+                    var btn = document.getElementById("myBtn");
+
+                    // Получаем элемент <span>, который закрывает модальное окно
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // Когда пользователь нажимает на кнопку, открывается модальное окно 
+                    btn.onclick = function() {
+                      modal.style.display = "block";
+                    }
+
+                    // Когда пользователь нажимает на <span> (x), закрывается модальное окно
+                    span.onclick = function() {
+                      modal.style.display = "none";
+                    }
+
+                    // Когда пользователь кликает в любом месте за пределами модального окна, закрывается модальное окно
+                    window.onclick = function(event) {
+                      if (event.target == modal) {
+                        modal.style.display = "none";
+                      }
+                    }
+                    </script>
+
+    </main>
+    <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>ATTRACTIONS</h3>
+            <ul>
+              <li><a href="#">Universal Studios Singapore</a></li>
+              <li><a href="#">S.E.A. Aquarium</a></li>
+              <li><a href="#">Adventure Cove Waterpark</a></li>
+              <li><a href="#">Dolphin Island</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>SPECIAL EXPERIENCES</h3>
+            <ul>
+              <li><a href="#">S.E.A. Aquarium VIP Experience</a></li>
+              <li><a href="#">Universal Studios Singapore VIP Experience</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>HOTELS</h3>
+            <ul>
+              <li><a href="#">Crockfords Tower</a></li>
+              <li><a href="#">Equarius Hotel</a></li>
+              <li><a href="#">Equarius Ocean Suite</a></li>
+              <li><a href="#">Equarius Tree Top Lofts</a></li>
+              <li><a href="#">Equarius Villas</a></li>
+              <li><a href="#">Genting Hotel Jurong</a></li>
+              <li><a href="#">Hotel Michael</a></li>
+              <li><a href="#">Hotel Ora</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>VISITOR INFORMATION</h3>
+            <ul>
+              <li><a href="#">Getting Here</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Resort Guide</a></li>
+              <li><a href="#">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>RESTAURANTS</h3>
+            <ul>
+              <li><a href="#">CHIFA</a></li>
+              <li><a href="#">Feng Shui Inn</a></li>
+              <li><a href="#">Ocean Restaurant</a></li>
+              <li><a href="#">Osia Steak and Seafood Grill</a></li>
+              <li><a href="#">Soi Social</a></li>
+              <li><a href="#">Syun</a></li>
+              <li><a href="#">table65</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; Vlad Umanau, Alexey Ivanov, Rusakov Nikita</p>
+          <div class="social-links">
+            <a href="#"><img src="../images/icons8-facebook-50.png" alt="Facebook" width="45px"></a>
+            <a href="#"><img src="../images/icons8-instagram-50.png" alt="Twitter" width="45px"></a>
+            <a href="#"><img src="../images/icons8-линкедин-50.png" alt="Instagram" width="45px"></a>
+          </div>
+        </div>
+      </footer>
+</body>
+  </html>
