@@ -12,10 +12,7 @@ select{
     background-color: #c84332;
     color: white;
 }
-#modal-heading{
-    text-align:center;
-    margin-bottom:8px
-}
+
 .header{
     position: fixed; 
     width: 100%;
@@ -104,6 +101,11 @@ a{
     right: 10px;
 }
 
+#modal-heading{
+    text-align:center;
+    margin-bottom:8px;
+    margin-top:10px;
+}
 
 .Button{
     color: white;
@@ -173,7 +175,7 @@ a{
 
 .main{
    padding-top: 90px;
-   padding-bottom: 600px;
+   padding-bottom: 100px;
 }
 
 .hero{
@@ -185,6 +187,7 @@ a{
     background-color: blanchedalmond;
     position: relative;
     overflow: hidden;
+    border-radius: 2px;
 }
 
 #slider {
@@ -539,6 +542,7 @@ footer {
     padding: 1%;
     border: 1px solid #ddd;
     margin-left: 30%;
+    border-radius: 2px;
 }
 
 .offer-card {
@@ -552,8 +556,9 @@ footer {
   }
 
 .offer-card__image {
-    flex: 0 0 50%; /* Занимает 30% ширины контейнера */
+    flex: 0  60%; /* Занимает 30% ширины контейнера */
     width: 90%;
+    border-radius: 3px;
 }
 
 .offer-card__type {
@@ -576,6 +581,7 @@ footer {
 
 .book_end_text {
     margin-right: 10px;
+    font-weight: 700;
 }
 
 .modal {
@@ -684,8 +690,8 @@ footer {
             border: 1px solid #ccc;
           }
           .end-card-img{
-            margin-left:-20px
-
+            margin-left:-20px;
+            height:30%;
           }      
           .dropdown {
             position: relative;
@@ -802,9 +808,12 @@ footer {
             font-size: 21px;
             width: 100%;
             cursor: pointer;
+            bottom:50px;
+            margin-top: 12px;
+            border-radius: 2px;
           }
 
-          .sub a {
+          .sub p {
             color: white;
             text-decoration: none;
   }
