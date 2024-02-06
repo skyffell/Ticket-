@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/book.css">
+    <title>Document</title>
+</head>
+<body action="/form">
+    <script src="/static/book.js"></script>
+    <header class="header">
+<div class="return"> 
+    <a  href = "/" class=" return_a">
+        return
+    </a>
+</div>
+
+<h2 class="Booking_h">
+Booking
+</h2>
+
+
+    </header>
+    <form method="POST" action="/submit">
+        <section class="hero">
+            <h2>Attractions</h2>
+            <select id="attractions" name="attractions">
+                <option value="seaAquarium">S.E.A. Aquarium</option>
+                <option value="universalStudio">Universal Studio Singapore</option>
+                <option value="adventureCove">Adventure Cove Waterpark</option>
+                <option value="dolphinIsland">Dolphin Island</option>
+            </select>
+        </section>
+    </form>
+    
+    
+    
+        <h2>Visiting Date</h2>
+        <input type="text" id="datepicker" name="date">
+    
+        <script>
+            $( function() {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() );
+                $( "#datepicker" ).datepicker({
+                    minDate: tomorrow
+                });
+            } );
+        </script>
+        <a href="/book" class = "btnsub">
+        <button type="button" id="bookNow">BOOK NOW</button>
+        </a>
+    </section>
+    
+</body>
+</html>
