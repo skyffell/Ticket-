@@ -12,7 +12,10 @@ select{
     background-color: #c84332;
     color: white;
 }
-
+#modal-heading{
+    text-align:center;
+    margin-bottom:8px
+}
 .header{
     position: fixed; 
     width: 100%;
