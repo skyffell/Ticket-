@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/static/styles.css">
+     <script src="/static/main.js"></script>
+
+
+     <title>Document</title>
+ </head>
+ <body>
+     <header class="header">
+
+
+         <img src="../images/logo-thumb.svg" alt="logo" class="logo">
+
+         <div class="Button">
+             <a href="/form">
+                 BOOK NOW
+             </a>
+         </div>
+     </header>
+
+
+
+     <main class="main">
+         <section class="hero">
+             <div id="slider">
+                 <img class="active" src="../images/adventure-cove-waterpark_1440x760.avif" alt="Image 1">
+                 <img src="../images/dolphin-island-main-masthead-1440x760-1.avif" alt="Image 2">
+                 <img src="../images/seaa-main-masthead-1440x760.avif" alt="Image 3">
+                 <img src="../images/universal-studios-singapore-masthead-1440x760.avif" alt="Image 4">
+             </div>
+             <button class="slider_btn_1" onclick="slide(-1)"><</button>
+             <button class="slider_btn" onclick="slide(1)">></button>
+
+             <script>
+                 var images = Array.from(document.querySelectorAll('#slider img'));
+                 var index = 0;
+                 function slide(direction) {
+                     images[index].classList.remove('active');
+                     index += direction;
+                     if (index < 0) index = images.length - 1;
+                     if (index >= images.length) index = 0;
+                     images[index].classList.add('active');
+                 }
+             </script>
+
+             <div class="div_hero">
+                 <div class="hero_button">
+                    <a href="/form">
+                        BOOK NOW
+                    </a> 
+                 </div>
+             </div>
+            </section>
+            <section class="section_2">
+                <div    class="container">
+                <div class="card">
+                    <img src="../images/dolphin-island-750x422.avif" alt="attraction" class="card_attraction">
+                    <h3 class="names">
+                        Dolphin Island
+                    </h3>
+                    <p class="card_text">
+                        Discover one of the ocean’s natural wonders – the Indo-Pacific bottlenose dolphin – through our range of enriching programmes. 
+
+                    </p>
+                    <div class="Button_2">
+                        <a href="book.html">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+
+                <img src="../images/adventure-cove-waterpark_1440x760.avif" alt="attraction" class="card_attraction">
+                <h3 class="names">
+                   Adventure Cove Waterpark     
+                </h3>
+                <p class="card_text">
+                        Get swimsuits at the ready for a thrilling, water-packed adventure – there’s rides and activities just for you.
+
+                    </p>
+                    <div class="Button_2">
+                        <a href="book.html">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div    class="container">
+                <div class="card">
+                    <img src="../images/seaa-main-masthead-1440x760.avif" alt="attraction" class="card_attraction">
+                    <h3 class="names">
+                        S.E.A Aquarium
+                    </h3>
+                    <p class="card_text">
+                        Explore this interactive underwater world and learn about conserving the 1,000 species that make it their home.
+                    </p>
+                    <div class="Button_2">
+                        <a href="book.html">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../images/universal-studios-singapore-750x422.avif" alt="attraction" class="card_attraction">
+                    <h3 class="names">
+                        Universal Studios Singapore
+                    </h3>
+                    <p class="card_text">
+                        Explore all 6 adventure-filled zones featuring thrilling rides, street entertainers and even photo ops with your favourite characters.
+                    </p>
+                    <div class="Button_2">
+                        <a href="book.html">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+                </section>
+     </main>
+     <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>ATTRACTIONS</h3>
+            <ul>
+              <li><a href="#">Universal Studios Singapore</a></li>
+              <li><a href="#">S.E.A. Aquarium</a></li>
+              <li><a href="#">Adventure Cove Waterpark</a></li>
+              <li><a href="#">Dolphin Island</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>SPECIAL EXPERIENCES</h3>
+            <ul>
+              <li><a href="#">S.E.A. Aquarium VIP Experience</a></li>
+              <li><a href="#">Universal Studios Singapore VIP Experience</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>HOTELS</h3>
+            <ul>
+              <li><a href="#">Crockfords Tower</a></li>
+              <li><a href="#">Equarius Hotel</a></li>
+              <li><a href="#">Equarius Ocean Suite</a></li>
+              <li><a href="#">Equarius Tree Top Lofts</a></li>
+              <li><a href="#">Equarius Villas</a></li>
+              <li><a href="#">Genting Hotel Jurong</a></li>
+              <li><a href="#">Hotel Michael</a></li>
+              <li><a href="#">Hotel Ora</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>VISITOR INFORMATION</h3>
+            <ul>
+              <li><a href="#">Getting Here</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Resort Guide</a></li>
+              <li><a href="#">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>RESTAURANTS</h3>
+            <ul>
+              <li><a href="#">CHIFA</a></li>
+              <li><a href="#">Feng Shui Inn</a></li>
+              <li><a href="#">Ocean Restaurant</a></li>
+              <li><a href="#">Osia Steak and Seafood Grill</a></li>
+              <li><a href="#">Soi Social</a></li>
+              <li><a href="#">Syun</a></li>
+              <li><a href="#">table65</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; Vlad Umanau, Alexey Ivanov, Rusakov Nikita</p>
+          <div class="social-links">
+            <a href="#"><img src="../images/icons8-facebook-50.png" alt="Facebook" width="45px"></a>
+            <a href="#"><img src="../images/icons8-instagram-50.png" alt="Twitter" width="45px"></a>
+            <a href="#"><img src="../images/icons8-линкедин-50.png" alt="Instagram" width="45px"></a>
+          </div>
+        </div>
+      </footer>
+ </body>
+                                                                  </html>
