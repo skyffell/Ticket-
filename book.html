@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="header">
-        <img src="../images/logo-thumb.svg" alt="logo" class="logo">
+        <img src="/images/logo-thumb.svg" alt="logo" class="logo">
         <div class="Button">
             <a href="book.html">
                 BOOK NOW
@@ -29,31 +29,28 @@
         </div>
 
         <div class="offer-cards">
-            {% for offer in offers %}
             <div class="offer-card">
                 <div class="offer-card__image">
-                    <img class="offer-card__image" src="{{ offer.image_url }}" alt="{{ offer.title }}">
+                    <img class="" src="/images/seaa-main-masthead-1440x760.avif" alt="">
                 </div>
                 <div class="offer-card__type">
                     <div>
-                        <h4>{{ offer.title }}</h4>
+                        <h4>Mastercard® Exclusive: S.E.A. Aquarium Package</h4>
                         <div class="offer-card_desc">
                             <p>Includes: </p>
                             <ul>
-                                {% for item in offer.includes %}
-                                <li>{{ item }}</li>
-                                {% endfor %}
+                                <li>1 x S.E.A. Aquarium Adult One-Day Ticket (ages 13 and above)​1</li>
+                                <li>1 x Mastercard Exclusive Gift2</li>
                             </ul>
-                            <p>Visit Period: {{ offer.visit_period }}</p>
+                            <p>1 Ticket valid for 7 days from selected date</p>
                             <p>*Redeemable at selected restaurants.</p>
-                            <p><sup>#</sup>No minimum spend. Stackable up to 4 vouchers per transaction.</p>
                         </div>
                         <a class="view_det">View details</a>
                     </div>
                     <div class="book_end">
                         <div class="book_end_text">
                             <span>From</span>
-                            <span><b>{{ offer.price }}</b></span>
+                            <span><b>78</b></span>
                         </div>
                         <div>
                             <button id="myBtn" class="Button">Select</button>
@@ -67,10 +64,10 @@
                       <div class="modal-content">
                         <span class="close">&times;</span>
                         <div class="package-container">
-                            <img class="end-card-img" src="../images/seaa-main-masthead-1440x760.avif" alt="S.E.A Aquarium" width="1080" height="625">
-                            <h2>value of</h2>
+                            <img class="end-card-img" src="/images/seaa-main-masthead-1440x760.avif" alt="S.E.A Aquarium" width="1080" height="625">
+                            <h2 id='modal-heading'>Mastercard® Exclusive: S.E.A. Aquarium Package</h2>
                             <div class="dropdown">
-                                <button onclick="myFunction('myDropdown1')" class="dd-btn">Details <img src="../images/chevron-down (1).svg" class="img-right"></button>
+                                <button onclick="myFunction('myDropdown1')" class="dd-btn">Details <img src="/images/chevron-down (1).svg" class="img-right"></button>
                                 <div id="myDropdown1" class="dropdown-content">
                                     <ul>
                                   <li>1 x S.E.A. Aquarium Adult One-Day Ticket (ages 13 and above)¹</li>
@@ -113,7 +110,7 @@
                                   </div>
 
                                   <div class="sub">
-                                    <a href="/submit?sdg=your-sdg-value">{{sdg}}</a>
+                                    <a href="/submit?sdg=your-sdg-value">SDG64</a>
                                     <a href="" id="add-to-cart-link">Add To Cart</a>
                                   </div>
 
